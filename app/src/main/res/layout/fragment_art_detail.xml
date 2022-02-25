@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/ArtImageView"
-        android:layout_width="334dp"
-        android:layout_height="264dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="355dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/fragment_art_detail_image_view"
         app:layout_constraintBottom_toTopOf="@+id/edtNameText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +22,9 @@
 
     <EditText
         android:id="@+id/edtNameText"
-        android:layout_width="305dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="19dp"
         android:autofillHints="name"
         android:ems="10"
         android:hint="@string/enter_name"
@@ -37,8 +37,10 @@
 
     <EditText
         android:id="@+id/edtArtistText"
-        android:layout_width="305dp"
-        android:layout_height="0dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
         android:layout_marginBottom="17dp"
         android:autofillHints="name"
         android:ems="10"
@@ -52,27 +54,29 @@
 
     <EditText
         android:id="@+id/edtYearText"
-        android:layout_width="305dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="14dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="36dp"
+        android:autofillHints="year"
         android:ems="10"
         android:hint="@string/enter_year"
         android:inputType="textPersonName"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtArtistText"
-        android:autofillHints="year"/>
+        app:layout_constraintTop_toBottomOf="@+id/edtArtistText" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtYearText" />
 
