@@ -18,7 +18,8 @@ class ArtFragment : Fragment(R.layout.fragment_arts) {
         fragmentArtsBinding = binding
 
         binding.fab.setOnClickListener {
-            findNavController().navigate(ArtFragmentDirections.actionArtFragmentToArtDetailFragment())
+            findNavController().navigate(
+                ArtFragmentDirections.actionArtFragmentToArtDetailFragment())
         }
     }
 
