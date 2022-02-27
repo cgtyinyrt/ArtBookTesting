@@ -15,6 +15,4 @@ interface ArtDao {
 
     @Query("SELECT * FROM arts")
     fun observeArts(): LiveData<List<Art>>
-
-
 }
