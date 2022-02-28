@@ -2,7 +2,13 @@ package com.cagatayinyurt.artbooktesting.di
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.cagatayinyurt.artbooktesting.R
 import com.cagatayinyurt.artbooktesting.api.Retrofit
+import com.cagatayinyurt.artbooktesting.repo.ArtRepoInterface
+import com.cagatayinyurt.artbooktesting.repo.ArtRepository
+import com.cagatayinyurt.artbooktesting.roomdb.ArtDao
 import com.cagatayinyurt.artbooktesting.roomdb.ArtDatabase
 import com.cagatayinyurt.artbooktesting.util.Util.BASE_URL
 import dagger.Module
@@ -37,4 +43,16 @@ object AppModule {
             .build()
             .create(Retrofit::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun injectNormalRepo(dao: ArtDao, api: Retrofit) = ArtRepository(dao, api) as ArtRepoInterface
+
+    @Singleton
+    @Provides
+    fun injectGlide(@ApplicationContext context: Context) = Glide.with(context)
+        .setDefaultRequestOptions(
+            RequestOptions().placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_foreground)
+        )
 }
